@@ -1,26 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-carousel
+    cycle = 4000
+    progress = "primary"
+    height="400"
+    hide-delimiter-background
+    show-arrows="hover"
+  >
+    <v-carousel-item
+      v-for="(slide, i) in slides"
+      :key="i"
+    >
+      <v-sheet
+        :color="colors[i]"
+        height="100%"
+      >
+        <div class="d-flex fill-height justify-center align-center">
+          <div class="text-h2">
+            {{ slide }} Slide
+          </div>
+        </div>
+      </v-sheet>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    data () {
+      return {
+        colors: [
+          'indigo',
+          'warning',
+          'pink darken-2',
+          'red lighten-1',
+          'deep-purple accent-4',
+        ],
+        slides: [
+          'First',
+          'Second',
+          'Third',
+          'Fourth',
+          'Fifth',
+        ],
+      }
+    },
   }
-}
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
