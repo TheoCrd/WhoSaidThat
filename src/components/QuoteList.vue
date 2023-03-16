@@ -19,8 +19,10 @@ export default {
 	padding: 32px;
 	max-width: 720px;
 	margin: 0 auto;
+	color: rgb(255, 255, 255);
+	font-weight: bolder;
 	.quote {
-		background-color: var(--light);
+		background-color: var(--secondary);
 		padding: 16px;
 		border-radius: 16px;
 		margin-bottom: 16px;
