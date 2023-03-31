@@ -26,6 +26,7 @@ export default {
 		padding: 16px;
 		border-radius: 16px;
 		margin-bottom: 16px;
+		font-family: 'Roboto', sans-serif;
 		
 		&-header {
 			overflow: hidden;

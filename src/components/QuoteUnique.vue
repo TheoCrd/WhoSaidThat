@@ -16,7 +16,7 @@
 
 <script>
 export default {
-	props: ['quote']
+	props: ["anime", "character", "quote"]
 }
 </script>
 
@@ -26,17 +26,22 @@ export default {
 	padding: 32px;
 	margin: 0 auto;
 	max-width: 720px;
+	font-family: 'Fira-Sans', sans-serif;
 	&-content {
 		position: relative;
-		font-size: 1.5em;
-		font-weight: 700;
+		font-size: 1.75em;
+		font-weight: 600;
 		background-color: var(--dark);
 		color: var(--light);
 		padding: 48px 32px;
 		border-radius: 16px;
-		&:before, 
+		&:before{
+			content:"\“";
+			color: var(--grey);
+			margin: 0 2px;
+		} 
 		&:after {
-			content: "\"";
+			content: "\”";
 			color: var(--grey);
 			margin: 0 2px;
 		}
@@ -50,10 +55,10 @@ export default {
 		padding: 32px;
 		&-author, &-anime {
 			position: absolute;
-			padding: 12px 16px;
+			padding: 10px 16px;
 			font-size: 1.2em;
 			font-weight: 400;
-			border-radius: 99px;
+			border-radius: 50px;
 			color: var(--light);
 			text-align: center;
 		}
@@ -64,7 +69,7 @@ export default {
 			background-color: var(--secondary);
 		}
 		&-anime {
-			top: 0px;
+			top: 10px;
 			left: 0px;
 			background-color: var(--tertiary);
 			background-color: var(--tertiary);

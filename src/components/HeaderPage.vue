@@ -6,6 +6,7 @@
 
 <script>
 export default {
+	name: "HeaderPage",
 	props: ['title']
 }
 </script>
@@ -16,6 +17,7 @@ header {
 	display: flex;
 	justify-content: center;
 	h1 {
+		font-family: 'Noto Sans JP', sans-serif;
 		font-size: 2em;
 		color: var(--dark);
 		font-weight: 700;
