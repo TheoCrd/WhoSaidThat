@@ -27,6 +27,7 @@ export default {
 		border-radius: 16px;
 		margin-bottom: 16px;
 		font-family: 'Roboto', sans-serif;
+		transition: 0.4s ease-in-out;
 		
 		&-header {
 			overflow: hidden;
@@ -36,6 +37,7 @@ export default {
 			max-height: 1.2em;
 		} 
 		&:hover {
+			transform: scale(1.05); // Add the desired transformation on hover
 			.quote-header {
 				white-space: unset;
 				max-height: unset;

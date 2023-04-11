@@ -1,14 +1,29 @@
 <template>
-    <div class="page">
-        Test
+<v-app id="inspire">
+    <div class="app">
+        <HeaderPage />
     </div>
-
+  </v-app>
 </template>
 
 <script>
-export default {
+import HeaderPage from '../components/HeaderPage.vue';
 
+export default {
+    name: 'secondPage',
+    components: {
+        HeaderPage,
+    },
 }
 </script>
 
-<style></style>
+<style>
+#inspire{
+  background-image: url("../assets/bg@2x.png"); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+</style>
