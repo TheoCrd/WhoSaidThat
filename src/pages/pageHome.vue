@@ -1,40 +1,24 @@
 <template>
-  <v-app id="inspire">
-    <div class="app">
-        <HeaderPage />
+<div class="app">
         <div class = "quote-unique">
-        <QuoteUnique :quote="quote"  />
+        <QuoteRandom :quote="quote"  />
         </div>
         <div class="button-container">
         <button v-on:click="retrieveData()">NEW QUOTE</button>
         </div>
         <QuoteList :quotes="quotes" />
-        <div class = "select-menu">
-        <v-select
-          v-model="selected"
-          label="Select an Anime"
-          :items="names"
-          bg-color = "red"
-          persistent-hint
-          return-object
-          single-line
-          clearable
-        ></v-select>
-        </div>
-    </div>
-  </v-app>
+</div>
 </template>
   
   <script>
-  import HeaderPage from '../components/HeaderPage.vue';
-  import QuoteUnique from '../components/QuoteUnique.vue';
+
+  import QuoteRandom from '../components/QuoteRandom.vue';
   import QuoteList from '../components/QuoteList.vue';
   import { getAllAnime, getQuoteData } from '@/services/api/quoteAPI.js';
   export default {
     name: 'HomePage',
     components: {
-      HeaderPage,
-      QuoteUnique,
+      QuoteRandom,
       QuoteList
     },
     data() {
@@ -107,14 +91,6 @@
 			transform: scale(1.05); // Add the desired transformation on hover
     }
   }
-}
-
-.app{
-  background-image: url("../assets/bg@2x.png"); 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 .quote-unique{

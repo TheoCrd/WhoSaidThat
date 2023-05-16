@@ -1,8 +1,19 @@
 <template>
   <div class="app">
+    <HeaderPage />
+    <router-view/>
   </div>
-  <router-view/>
 </template>
+
+<script>
+import HeaderPage from '@/components/HeaderPage.vue';
+export default {
+  name: "App",
+  components: {
+    HeaderPage
+  },
+};
+</script>
 
 <style lang = "scss">
 
@@ -13,6 +24,13 @@
   --dark: #131A26;
   --light: #EEE;
   --grey: #848484;
+}
+body{
+background-image: url("./assets/bg@2x.png"); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 </style>

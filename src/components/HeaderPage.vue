@@ -8,12 +8,9 @@
 			<ul>
 				<li><router-link to = "/">Home</router-link></li>
 				<li><router-link to = "/pageSecond">Second Page</router-link></li>
-				<li><router-link to = "/pageSecond">Third Page</router-link></li>
+				<li><router-link to = "/Search">Search</router-link></li>
 			</ul>
 		</nav>
-		<div class = "search-bar">
-			<input v-model="searchInput" @input="handleSearchInput" placeholder="Search..." />
-		</div>
 	</header>
 </template>
   
@@ -26,17 +23,6 @@ export default {
 		default: "Who said that"
 		}
 	},
-	data() {
-    return {
-      searchInput: "" // Add the searchInput data property
-    };
-  },
-  methods: {
-    handleSearchInput() {
-      // Implement your logic for handling search input here
-      console.log("Search input changed:", this.searchInput);
-    }
-  }
 };
 </script>
   
@@ -124,35 +110,6 @@ a:hover {
   100% {
     transform: rotate(0deg);
   }
-}
-
-
-.search-bar {
-  //flex-grow: 1; /* Added to make the search bar expand and take up remaining space */
-  display: flex;
-  justify-content: flex-end; /* Added to align the search bar to the right */
-  align-items: center;
-  margin-left: 16px;
-}
-
-input {
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  outline: none;
-  background-color: rgb(92, 44, 139);
-  color: var(--light);
-  transition: background-color 0.3s;
-}
-
-input::placeholder {
-    opacity: 0.5;
-    color: var(--light);
-}
-
-input:focus {
-  background-color: rgb(118, 76, 160);
-  color: var(--light);
 }
 
 .title{
