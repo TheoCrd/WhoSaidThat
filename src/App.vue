@@ -1,16 +1,19 @@
 <template>
-  <div class="app">
+  <div class="main-container">
     <HeaderPage />
     <router-view/>
+    <FooterPage/>
   </div>
 </template>
 
 <script>
 import HeaderPage from '@/components/HeaderPage.vue';
+import FooterPage from '@/components/FooterPage.vue';
 export default {
   name: "App",
   components: {
-    HeaderPage
+    HeaderPage,
+    FooterPage
   },
 };
 </script>
@@ -31,6 +34,11 @@ background-image: url("./assets/bg@2x.png");
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 </style>

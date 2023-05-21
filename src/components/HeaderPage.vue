@@ -1,14 +1,17 @@
 <template>
 	<header>
 		<div class ="title">
-			<v-icon class = "icon" color = "white" icon="mdi-comment-quote-outline" size="75px"></v-icon>
+			<router-link to="/">
+				<v-icon class = "icon" color = "white" icon="mdi-comment-quote-outline" size="75px"></v-icon>
+			</router-link>
 			<h1 class = "title-text">{{ title }}</h1>
 		</div>
 		<nav>
 			<ul>
 				<li><router-link to = "/">Home</router-link></li>
-				<li><router-link to = "/pageSecond">Second Page</router-link></li>
-				<li><router-link to = "/Search">Search</router-link></li>
+				<li><router-link to = "/pageSecond">Search by Anime</router-link></li>
+				<li><router-link to = "/pageThird">Search by Character</router-link></li>
+				<li><router-link to = "/bookmarks">Bookmarks</router-link></li>
 			</ul>
 		</nav>
 	</header>
@@ -55,10 +58,12 @@ ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	font-family: "Noto Sans JP", sans-serif;
 }
 
 li {
 	margin-left: 16px; /* Added margin between links */
+	font-family: "Noto Sans JP", sans-serif;
 }
 
 a {
@@ -70,7 +75,7 @@ a {
 }
 
 a:hover {
-	color: var(--primary); /* Changed color on hover */
+	color:#7A488F;
 }
 .icon {
   margin-right: 16px; /* Added margin between icon and title */
@@ -78,8 +83,8 @@ a:hover {
 }
 
 .icon:hover{
-	opacity: 0.8;
 	animation: shake 0.5s ease-in-out;
+	cursor: pointer;
 }
 
 @keyframes shake {
@@ -117,24 +122,34 @@ a:hover {
 	align-items: center;
 }
 .title-text {
-  //opacity: 0.8;
   position: relative;
 }
 
-.title-text:hover {
-  animation: waveAnimation 1s infinite; /* Added :hover pseudo-class */
-  transform-origin: bottom;
-}
+@media screen and (max-width: 768px) {
+	header {
+	flex-direction: column;
+	align-items: center;
+	}
 
-@keyframes waveAnimation {
-  0% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(-10deg);
-  }
+	.title {
+	margin-bottom: 16px;
+	}
+
+	nav {
+	margin-top: 16px;
+	}
+
+	h1 {
+	border-right: none;
+	padding-right: 0;
+	}
+
+	ul {
+	flex-direction: column;
+	}
+
+	li {
+	margin: 8px 0;
+	}
 }
 </style>

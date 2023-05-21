@@ -1,38 +1,37 @@
 <template>
-<div class = "search-bar">
-	<form @submit.prevent="searchQuotes">
-		<div class="input-container">
-			<input type="text" v-model="anime" id="anime" placeholder="Search by Anime (e.g. One Piece)" class = "text-input">
-			<v-icon class="search-icon" color="white" icon = "mdi-magnify" @click="searchQuotes"></v-icon>
-		</div>
-	</form>
-</div>
+	<div class = "search-bar">
+		<form @submit.prevent="searchQuotes">
+			<div class="input-container">
+				<input type="text" v-model="character" id="character" placeholder="Search by Character (e.g. Ichigo)" class = "text-input">
+				<v-icon class="search-icon" color="white" icon = "mdi-magnify" @click="searchQuotes"></v-icon>
+			</div>
+		</form>
+	</div>
 </template>
 
 <script>
 export default {
-name: 'SearchingTest',
+name: 'SearchingTestCharacter',
 props: {
-    initialAnime: {
+    initialCharacter: {
       type: String,
       default: '',
     },
 },
 data() {
 	return {
-		anime: this.initialAnime,
+		character: this.initialCharacter,
 	};
 },
 methods: {
 	searchQuotes() {
-	this.$emit('search', this.anime);
+	this.$emit('search', this.character);
 	},
 },
 };
 </script>
 
 <style scoped>
-
 .search-bar{
 	width: 50%;
 	max-width: 500px;
@@ -65,4 +64,5 @@ methods: {
 	padding-right: 20px;
 	}
 }
+
 </style>

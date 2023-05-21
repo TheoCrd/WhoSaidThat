@@ -14,7 +14,7 @@
 
   import QuoteRandom from '../components/QuoteRandom.vue';
   import QuoteList from '../components/QuoteList.vue';
-  import { getAllAnime, getQuoteData } from '@/services/api/quoteAPI.js';
+  import { getQuoteData } from '@/services/api/quoteAPI.js';
   export default {
     name: 'HomePage',
     components: {
@@ -29,13 +29,10 @@
           content: ''
         },
         quotes: [],
-        selected: 'Select an Anime',
-        names:[],
       }
     },
     created() {
       this.retrieveData();
-      this.retrieveAllAnimeData();
     },
     methods: {
       async retrieveData() {
@@ -49,10 +46,6 @@
           content: data.quote
         }
       },
-      async retrieveAllAnimeData(){
-        const data = await getAllAnime();
-        this.names = data;
-      }
     }
   }
   </script>
