@@ -15,7 +15,7 @@
 	<div v-else>
 		<div class="quote-content-load">
 			<!-- Loader animation divs -->
-			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+			<div class="lds-ring-home"><div></div><div></div><div></div><div></div></div>
 		</div>
 	</div>
 </template>
@@ -97,13 +97,14 @@ export default {
 		padding: 48px 32px;
 		border-radius: 16px;
 }
-.lds-ring {
+.lds-ring-home {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
+  margin-top: 1%;
 }
-.lds-ring div {
+.lds-ring-home div {
   box-sizing: border-box;
   display: block;
   position: absolute;
@@ -113,20 +114,20 @@ export default {
   border: 8px solid #c4a9c3;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #c4a9c3 transparent transparent transparent;
+  border-color: #ffffff transparent transparent transparent;
 }
 
 //loader animation section
-.lds-ring div:nth-child(1) {
+.lds-ring-home div:nth-child(1) {
   animation-delay: -0.45s;
 }
-.lds-ring div:nth-child(2) {
+.lds-ring-home div:nth-child(2) {
   animation-delay: -0.3s;
 }
-.lds-ring div:nth-child(3) {
+.lds-ring-home div:nth-child(3) {
   animation-delay: -0.15s;
 }
-@keyframes lds-ring {
+@keyframes lds-ring-home {
   0% {
     transform: rotate(0deg);
   }

@@ -1,4 +1,4 @@
-const getQuoteData = async function () {
+const getRandomQuoteData = async function () {
     const response = await fetch('https://animechan.vercel.app/api/random')
     if (response.status == 200){
         const data = response.json();
@@ -54,7 +54,7 @@ async function getSearchedQuoteByCharacter(name, page) {
     }
 }
 export {
-    getQuoteData, 
+    getRandomQuoteData, 
     getAllAnime, 
     getAllCharacter, 
     getSearchedQuoteByAnime, 

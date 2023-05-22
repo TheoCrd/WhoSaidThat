@@ -12,9 +12,9 @@
         </div>
         <div class="quote-gallery">
           <div v-for="(bookmark, index) in filteredBookmarks" :key="index" class="quote-item">
-            <p>Anime: {{ bookmark.anime }}</p>
-            <p>Character: {{ bookmark.character }}</p>
-            <p>Quote: {{ bookmark.quote }}</p>
+            <p><b>Anime:</b> {{ bookmark.anime }}</p>
+            <p><b>Character:</b> {{ bookmark.character }}</p>
+            <p><b>Quote:</b> {{ bookmark.quote }}</p>
             <button @click="removeBookmark(bookmark)" class="remove-button">Remove</button>
           </div>
         </div>
@@ -70,17 +70,12 @@
 
 <style>
 
-h2{
+h2, .no-bookmarks{
   display: flex;
   justify-content: center;
   margin-top: 1%;
   margin-bottom: 0.5%;
-}
-
-.no-bookmarks{
-  display: flex;
-  justify-content: center;
-  margin-top: 1%;
+  color: white;
 }
 
 .quote-gallery {
@@ -91,14 +86,21 @@ h2{
 }
 
 .quote-item {
-  background-color: #f5f5f5;
+  background-color: #9c62b4;
   padding: 10px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
+  font-weight: 700;
+  font-size: 1em;
+  height: 100%;
+}
+
+.quote-item > p{
+  color:white;
 }
 
 .search-bar {
@@ -142,11 +144,6 @@ input[type="text"]:focus {
 .remove-button:hover {
   background-color: #9c62b4;
 }
-
-/* .counter {
-  font-weight: bold;
-  margin-left: 5px;
-} */
 </style>
 
   

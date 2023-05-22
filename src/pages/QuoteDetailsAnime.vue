@@ -1,15 +1,23 @@
 <template>
-  <div>
     <h2>Quote Details</h2>
-    <div>
-      <h3>Anime: {{ anime }}</h3>
-      <h4>Character: {{ character }}</h4>
-      <p>Quote: {{ quote }}</p>
+    <div class ="quote">
+      <div class="quote-content">
+        {{ quote }}
+      </div>
+      <div class="quote-info">
+        <div class="quote-info-anime">
+          {{ anime }}
+        </div>
+        <div class="quote-info-author">
+          {{ character }}
+        </div>
+      </div>
+    </div>
+    <div class="button-wrapper">
       <button @click="goBack">Go Back</button>
       <br/>
       <button @click="toggleBookmark">{{ bookmarked ? 'Remove Bookmark' : 'Bookmark' }}</button>
     </div>
-  </div>
 </template>
 
 <script>
@@ -26,7 +34,7 @@ export default {
   },
   methods:{
     goBack() {
-      this.$router.push('/pageSecond');
+      this.$router.push('/SearchQuoteAnime');
     },
     toggleBookmark() {
       this.bookmarked = !this.bookmarked;
@@ -66,7 +74,90 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+  .quote {
+    position: relative;
+    padding: 32px;
+    margin: 0 auto;
+    max-width: 720px;
+    font-family: 'Fira-Sans', sans-serif;
+    &-content {
+      position: relative;
+      font-size: 1.75em;
+      font-weight: 600;
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 48px 32px;
+      border-radius: 16px;
+      &:before{
+        content:"\“";
+        color: var(--grey);
+        margin: 0 2px;
+      } 
+      &:after {
+        content: "\”";
+        color: var(--grey);
+        margin: 0 2px;
+      }
+    }
+    &-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 32px;
+      transition: 0.4s;
+      &-author, &-anime {
+        position: absolute;
+        padding: 10px 16px;
+        font-size: 1.2em;
+        font-weight: 400;
+        border-radius: 50px;
+        color: var(--light);
+        text-align: center;
+      }
+      &-author {
+        top: calc(100% - 32px);
+        right: 0px;
+        transform: translateY(-50%);
+        background-color: var(--secondary);
+      }
+      &-anime {
+        top: 10px;
+        left: 0px;
+        background-color: var(--tertiary);
+        color: var(--dark);
+      }
+    }
+  }
 
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0px 32px;
+    margin: 64px auto;
+
+    button {
+      border: none;
+      outline: none;
+      background-color: var(--primary);
+      padding: 16px 32px;
+      border-radius: 99px;
+      color: var(--light);
+      font-size: 1.5em;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.4s;
+      margin-right: 10px;
+      margin-left: 10px;
+
+      &:hover {
+        background-color: var(--secondary);
+        transform: scale(1.05); // Add the desired transformation on hover
+      }
+    }
+  }
 </style>
 

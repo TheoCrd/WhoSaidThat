@@ -1,17 +1,17 @@
 <template>
 <div class="test">
-  <SearchingTestCharacter @search="searchCharacter" :initialCharacter="character" />
-    <QuoteGalleryCharacter v-if="character" :character="character" />
+  <SearchingCharacter @search="searchCharacter" :initialCharacter="character" />
+  <QuoteGalleryCharacter v-if="character" :character="character" />
 	</div>
 </template>
 
 <script>
-import SearchingTestCharacter from '../components/SearchingTestCharacter.vue';
+import SearchingCharacter from '../components/SearchingCharacter.vue';
 import QuoteGalleryCharacter from '../components/QuoteGalleryCharacter.vue';
 export default {
-  name: 'thirdPage',
+  name: 'SearchCharacter',
   components:{
-    SearchingTestCharacter,
+    SearchingCharacter,
     QuoteGalleryCharacter
   },
   data() {

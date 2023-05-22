@@ -16,9 +16,9 @@
 			<QuoteCard v-for="quote in visibleQuotes" :key="quote.id" :quoteData="quote" @click="redirectToQuoteDetails(quote)" />
 		</div>
 		<div class="buttons-container">
-			<button v-if="hasMore" @click="fetchMoreQuotes">Load more</button>
+			<button v-if="hasMore" @click="fetchMoreQuotes" class = "button-load-more">Load more</button>
 			<p v-else>No more quotes.</p>
-			<button v-if="visibleQuotes.length > 10" @click="loadLess">Load less</button>
+			<button v-if="visibleQuotes.length > 10" @click="loadLess" class = "button-load-less">Load less</button>
 		</div>
 	</div>
 </template>
@@ -133,7 +133,7 @@ filterCharacters() {
 		background-color: #9a54b8;
 		padding: 8px; 
 		border-radius: 4px;
-		width: 100%;
+		width: 50%;
 	}
 
 	.label-container label {
@@ -145,6 +145,7 @@ filterCharacters() {
 
 	select{
 		color: white;
+		width: 50%;
 	}
 
 	select option {
@@ -169,11 +170,28 @@ filterCharacters() {
 		margin-top: 20px;
 	}
 
+	.button-load-more, .button-load-less {
+		padding: 8px 16px;
+		background-color: #7A488F;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		margin-top: auto;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+
+	.button-load-more:hover, .button-load-less:hover {
+		background-color: #9c62b4;
+	}
+
 	.lds-ring {
 		display: inline-block;
 		position: relative;
 		width: 80px;
 		height: 80px;
+		margin-top: 20%;
 	}
 
 	.lds-ring div {

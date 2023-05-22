@@ -27,6 +27,7 @@ export default {
   --dark: #131A26;
   --light: #EEE;
   --grey: #848484;
+  --yellow: #ecde0d;
 }
 body{
 background-image: url("./assets/bg@2x.png"); 
@@ -35,6 +36,12 @@ background-image: url("./assets/bg@2x.png");
   -o-background-size: cover;
   background-size: cover;
 }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 .main-container{
   display: flex;
   flex-direction: column;

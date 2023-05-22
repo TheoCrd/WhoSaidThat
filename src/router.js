@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Page1 from "./pages/pageHome.vue"
-import Page2 from "./pages/pageSecond.vue"
-import Page3 from "./pages/pageThird.vue"
+import PageHome from "./pages/pageHome.vue"
+import pageSearchAnime from "./pages/pageSearchAnime.vue"
+import pageSearchCharacter from "./pages/pageSearchCharacter.vue"
 import QuoteDetailsAnime from "./pages/QuoteDetailsAnime.vue"
 import QuoteDetailsCharacter from "./pages/QuoteDetailsCharacter.vue"
 import Bookmarks from "./pages/pageBookmarks.vue"
 
 const routes = [
-  { path: '/', name:"Home", component: Page1 },
-  { path: '/pageSecond', name:"Second", component: Page2 },
-  { path: '/pageThird', name:"Third", component: Page3 },
+  { path: '/', name:"Home", component: PageHome },
+  { path: '/SearchQuoteAnime', name:"SearchQuoteAnime", component: pageSearchAnime },
+  { path: '/SearchQuoteCharacter', name:"SearchQuoteCharacter", component: pageSearchCharacter },
   {
     path: "/quoteAnime",
     name: "QuoteDetailsAnime",

@@ -1,18 +1,18 @@
 <template>
 <div class="test">
-  <SearchingTest @search="searchAnime" :initialAnime="anime" />
-    <QuoteGallery2 v-if="anime" :anime="anime" />
+  <SearchingAnime @search="searchAnime" :initialAnime="anime" />
+  <QuoteGalleryAnime v-if="anime" :anime="anime" />
 	</div>
 </template>
 
 <script>
-import SearchingTest from '../components/SearchingTest.vue';
-import QuoteGallery2 from '../components/QuoteGallery2.vue';
+import SearchingAnime from '../components/SearchingAnime.vue';
+import QuoteGalleryAnime from '../components/QuoteGalleryAnime.vue';
 export default {
-  name: 'secondPage',
+  name: 'SearchAnime',
   components:{
-    SearchingTest,
-    QuoteGallery2
+    SearchingAnime,
+    QuoteGalleryAnime
   },
   data() {
     return {

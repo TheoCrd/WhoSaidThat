@@ -9,8 +9,8 @@
 		<nav>
 			<ul>
 				<li><router-link to = "/">Home</router-link></li>
-				<li><router-link to = "/pageSecond">Search by Anime</router-link></li>
-				<li><router-link to = "/pageThird">Search by Character</router-link></li>
+				<li><router-link to = "/SearchQuoteAnime">Search by Anime</router-link></li>
+				<li><router-link to = "/SearchQuoteCharacter">Search by Character</router-link></li>
 				<li><router-link to = "/bookmarks">Bookmarks</router-link></li>
 			</ul>
 		</nav>
