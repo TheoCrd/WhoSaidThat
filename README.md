@@ -1,6 +1,7 @@
 # 💬 Who said that
 
-<b> Who said that</b> is a simple Vue Anime Quote look-up website made with the Vue.js Framework for an IMAC course during the fourth semester! 
+<b> Who said that</b> is a simple Vue Anime Quote look-up website made with the Vue.js Framework for an IMAC course during the fourth semester!<br>
+It is using the Animechan API.
 
 <br />
 <p align="center">
