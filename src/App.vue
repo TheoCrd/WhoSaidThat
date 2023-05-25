@@ -1,36 +1,35 @@
 <template>
   <div class="main-container">
     <HeaderPage />
-    <router-view/>
-    <FooterPage/>
+    <router-view />
+    <FooterPage />
   </div>
 </template>
 
 <script>
-import HeaderPage from '@/components/HeaderPage.vue';
-import FooterPage from '@/components/FooterPage.vue';
+import HeaderPage from "@/components/Header-Footer/HeaderPage.vue";
+import FooterPage from "@/components/Header-Footer/FooterPage.vue";
 export default {
   name: "App",
   components: {
     HeaderPage,
-    FooterPage
+    FooterPage,
   },
 };
 </script>
 
-<style lang = "scss">
-
+<style lang="scss">
 :root {
-  --primary: #D81E5B;
-  --secondary: #8A4FFF;
-  --tertiary: #32CBFF;
-  --dark: #131A26;
-  --light: #EEE;
+  --primary: #d81e5b;
+  --secondary: #8a4fff;
+  --tertiary: #32cbff;
+  --dark: #131a26;
+  --light: #eee;
   --grey: #848484;
   --yellow: #ecde0d;
 }
-body{
-background-image: url("./assets/bg@2x.png"); 
+body {
+  background-image: url("./assets/main-bg.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -42,10 +41,9 @@ html {
   overflow-x: hidden;
 }
 
-.main-container{
+.main-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
 </style>
